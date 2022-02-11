@@ -1,5 +1,6 @@
 import {Express, Request, Response} from "express"
 import { nanoid } from "nanoid";
+import { OverflowError } from "./error/overflow.error";
 
 export class StringHandler {
     
@@ -11,7 +12,8 @@ export class StringHandler {
         const string = nanoid(len);
         
         if (len > 21) {
-        
+            
+            throw new OverflowError("Length too big")
 
         }
 
