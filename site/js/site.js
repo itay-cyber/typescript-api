@@ -2,10 +2,8 @@ const btn = document.querySelector(".get-btn");
 const strText = document.querySelector("#strText");
 const input = document.querySelector("#input");
 
-
-
-if (input.value != "") {
-  btn.onclick = () => {
+btn.onclick = () => {
+  if (input.value != "") {
     $.get(
       window.location.href + `api/random/${input.value}`,
       function (data, status) {
@@ -13,5 +11,5 @@ if (input.value != "") {
         strText.innerHTML = str.string;
       }
     );
-  };
-}
+  }
+};

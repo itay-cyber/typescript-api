@@ -11,7 +11,7 @@ export class StringHandler {
         const string = nanoid(len);
         
         if (len > 21) {
-            res.status(418).send({ message: "Length is above maximum length"})
+        
 
         }
 
